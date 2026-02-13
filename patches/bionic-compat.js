@@ -9,6 +9,16 @@
 
 'use strict';
 
+// Override process.platform from 'android' to 'linux'
+// Termux runs on Linux kernel but Node.js reports 'android',
+// causing OpenClaw to reject the platform as unsupported.
+Object.defineProperty(process, 'platform', {
+  value: 'linux',
+  writable: false,
+  enumerable: true,
+  configurable: true,
+});
+
 const os = require('os');
 
 const _originalNetworkInterfaces = os.networkInterfaces;
