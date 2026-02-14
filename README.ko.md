@@ -127,6 +127,32 @@ openclaw onboard
 
 ![openclaw onboard](docs/images/openclaw-onboard.png)
 
+### 8단계: 게이트웨이 실행 및 Termux 탭 구성
+
+설정이 끝나면 게이트웨이를 실행합니다. 게이트웨이는 폰의 Termux에서 직접 실행하는 것이 안정적입니다.
+
+```bash
+openclaw gateway
+```
+
+게이트웨이를 유지하면서 다른 작업도 하려면 Termux의 **탭** 기능을 활용하세요. 화면 하단을 왼쪽에서 오른쪽으로 스와이프하면 탭 메뉴가 나타납니다. **NEW SESSION**을 눌러 새 탭을 추가할 수 있습니다.
+
+![Termux 탭 메뉴](docs/images/termux_menu.png)
+
+권장 탭 구성:
+
+- **탭 1**: `openclaw gateway` — 게이트웨이 상태를 실시간으로 확인
+
+![탭 1 - openclaw gateway](docs/images/termux_tab_1.png)
+
+- **탭 2**: `sshd` — 컴퓨터에서 SSH로 접속하여 명령어 입력 ([SSH 접속 가이드](docs/termux-ssh-guide.ko.md))
+
+![탭 2 - sshd](docs/images/termux_tab_2.png)
+
+이렇게 두 탭을 유지해 두면 게이트웨이가 안정적으로 동작하면서, 컴퓨터에서 SSH로 접속하여 추가 작업을 할 수 있습니다.
+
+> 게이트웨이를 중지하려면 탭 1에서 `Ctrl+C`를 누르세요. `Ctrl+Z`는 프로세스를 종료하지 않고 일시 중지만 시키므로, 반드시 `Ctrl+C`를 사용하세요.
+
 ## 동작 원리
 
 설치 스크립트는 Termux와 표준 Linux 간의 5가지 호환성 문제를 해결합니다:

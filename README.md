@@ -127,6 +127,32 @@ Follow the on-screen instructions to complete the initial setup.
 
 ![openclaw onboard](docs/images/openclaw-onboard.png)
 
+### Step 8: Start the Gateway and Set Up Termux Tabs
+
+Once setup is complete, start the gateway. Running it directly on the phone's Termux is the most stable approach.
+
+```bash
+openclaw gateway
+```
+
+To keep the gateway running while doing other work, use Termux's **tab** feature. Swipe from left to right on the bottom of the screen to open the tab menu. Tap **NEW SESSION** to add a new tab.
+
+![Termux tab menu](docs/images/termux_menu.png)
+
+Recommended tab setup:
+
+- **Tab 1**: `openclaw gateway` — Monitor gateway status in real time
+
+![Tab 1 - openclaw gateway](docs/images/termux_tab_1.png)
+
+- **Tab 2**: `sshd` — Allow SSH access from your computer ([SSH Setup Guide](docs/termux-ssh-guide.md))
+
+![Tab 2 - sshd](docs/images/termux_tab_2.png)
+
+With these two tabs open, the gateway runs stably while you can SSH in from your computer for additional tasks.
+
+> To stop the gateway, press `Ctrl+C` in Tab 1. Do not use `Ctrl+Z` — it only suspends the process without terminating it. Always use `Ctrl+C`.
+
 ## What It Does
 
 The installer handles 5 compatibility issues between Termux and standard Linux:
